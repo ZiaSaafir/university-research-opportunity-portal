@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Explore, search, and manage university research opportunities."
+    >
+
+    <title>Research Opportunity Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true">R</span>
+                <span>Research Portal</span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="#opportunities">Opportunities</a>
+                <a href="#management">Management</a>
+            </nav>
+        </div>
+
+        <div class="hero">
+            <p class="eyebrow">UNIVERSITY RESEARCH PORTAL</p>
+            <h1>Discover research opportunities</h1>
+            <p>
+                Explore research projects, discover academic interests,
+                and manage opportunities in one place.
+            </p>
+            <a class="hero-link" href="#opportunities">
+                Explore Opportunities
+            </a>
+        </div>
+    </header>
+
+    <main class="page-content">
+
+        <!-- Opportunity Listing -->
+        <section id="opportunities" aria-labelledby="opportunitiesHeading">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EXPLORE</p>
+                    <h2 id="opportunitiesHeading">Research Opportunities</h2>
+                    <p>
+                        Search projects by title, faculty member, or required skills.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="search-filters">
+                <div class="filter-field">
+                    <label for="searchInput">Search opportunities</label>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search title, faculty, or skills..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div class="filter-field">
+                    <label for="researchAreaFilter">Research area</label>
+                    <select id="researchAreaFilter">
+                        <option value="">All Research Areas</option>
+                    </select>
+                </div>
+
+                <div class="filter-action">
+                    <button
+                        type="button"
+                        id="clearFilters"
+                        class="secondary-button"
+                    >
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- API messages -->
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+
+            <!-- JavaScript renders API results here -->
+            <div
+                id="opportunitiesContainer"
+                class="opportunities-grid"
+                aria-live="polite"
+            >
+                Loading opportunities...
+            </div>
+        </section>
+
+        <!-- Create and Edit Management Form -->
+        <section id="management" aria-labelledby="managementHeading">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">MANAGEMENT</p>
+                    <h2 id="managementHeading">Manage Research Opportunities</h2>
+                    <p>
+                        Create a new opportunity or edit an existing research project.
+                    </p>
+                </div>
+            </div>
+
+            <form id="opportunityForm">
+                <div class="form-grid">
+
+                    <div class="form-field">
+                        <label for="title">Research Title *</label>
+                        <input
+                            type="text"
+                            id="title"
+                            maxlength="200"
+                            placeholder="Enter research title"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="research_area">Research Area *</label>
+                        <input
+                            type="text"
+                            id="research_area"
+                            maxlength="100"
+                            placeholder="e.g. Artificial Intelligence"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field full-width">
+                        <label for="description">Research Description *</label>
+                        <textarea
+                            id="description"
+                            placeholder="Describe the research project"
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="faculty_name">Faculty Member *</label>
+                        <input
+                            type="text"
+                            id="faculty_name"
+                            maxlength="100"
+                            placeholder="Enter faculty member's name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="department">Department *</label>
+                        <input
+                            type="text"
+                            id="department"
+                            maxlength="100"
+                            placeholder="e.g. Computer Science"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field full-width">
+                        <label for="required_skills">Required Skills *</label>
+                        <textarea
+                            id="required_skills"
+                            placeholder="e.g. Python, Machine Learning, SQL"
+                            rows="3"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="available_positions">
+                            Available Positions *
+                        </label>
+                        <input
+                            type="number"
+                            id="available_positions"
+                            min="1"
+                            step="1"
+                            placeholder="Enter number of positions"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="application_deadline">
+                            Application Deadline *
+                        </label>
+                        <input
+                            type="date"
+                            id="application_deadline"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="status">Opportunity Status</label>
+                        <select id="status" required>
+                            <option value="Open">Open</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">
+                        Create Opportunity
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Opportunity Details Modal -->
+    <div
+        id="detailsModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="detailsTitle"
+        aria-hidden="true"
+    >
+        <div class="modal-content">
+            <button
+                type="button"
+                class="modal-close"
+                aria-label="Close opportunity details"
+                onclick="closeDetails()"
+            >
+                &times;
+            </button>
+
+            <p class="eyebrow">OPPORTUNITY DETAILS</p>
+            <h2 id="detailsTitle">Research Opportunity</h2>
+
+            <div id="detailsContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>University Research Opportunity Portal</p>
+        <p>Academic research opportunities made easier to discover and manage.</p>
+    </footer>
+</body>
+</html>

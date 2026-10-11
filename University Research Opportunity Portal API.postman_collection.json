@@ -1,0 +1,83 @@
+{
+  "info": {
+    "_postman_id": "ccacc762-bc45-4170-abbb-b2f73e120798",
+    "name": "University Research Opportunity Portal API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57117798",
+    "_collection_link": "https://go.postman.co/collection/57117798-ccacc762-bc45-4170-abbb-b2f73e120798?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Create Opportunity 1",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "02 - Create Opportunity 2",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Create Opportunity 3",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Get All Opportunities",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "05 - Get Single Opportunity",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "06 - Update Opportunity",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "07 - Close Opportunity",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "08 - Delete Opportunity",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "09 - Deleted Opportunity 404",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
