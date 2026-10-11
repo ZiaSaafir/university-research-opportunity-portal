@@ -1,3 +1,7 @@
+Video Demonstrations Link: https://drive.google.com/file/d/1tkLF9FYXGJRx9hTpzciBUUeDvce3rOja/view?usp=sharing
+
+GitHub Link: https://github.com/ZiaSaafir/university-research-opportunity-portal
+
 # University Research Opportunity Portal
 
 A web-based application for discovering, viewing, creating, updating, closing, and deleting university research opportunities. The project uses Django REST Framework for the backend API and HTML, CSS, and JavaScript for the frontend.
